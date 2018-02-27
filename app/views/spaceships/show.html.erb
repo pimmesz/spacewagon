@@ -5,7 +5,8 @@
 <p>Location: <%= @spaceship.location %></p>
 <p>Price Per Day: <%= @spaceship.price_per_day %></p>
 
-<%= link_to 'HomePage', users_path %>
+<%= link_to 'HomePage', root_path %>
+<%= link_to 'Request to rent', new_spaceship_booking_path(@spaceship) %>
 <!-- This html page just shows the basic attributes of a specific spaceship -->
 
 
