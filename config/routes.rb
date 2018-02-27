@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  # get 'users/index'
+  # get 'spaceships/index'
 
-  # get 'users/new'
+  # get 'spaceships/new'
 
-  # get 'users/show'
+  # get 'spaceships/show'
 
   devise_for :users
   root to: 'pages#home'
-
+  resources :spaceships
   resources :users
   resources :bookings
   
