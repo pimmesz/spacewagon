@@ -3,6 +3,7 @@ class SpaceshipsController < ApplicationController
   end
 
   def show
+    @spaceship = Spaceship.find(params[:id])
   end
 
   def new

@@ -1,2 +1,12 @@
-<h1>Spaceships#show</h1>
-<p>Find me in app/views/spaceships/show.html.erb</p>
+<h1>The <%= @spaceship.name %></h1>
+<p>Captain: <%= @spaceship.captain %></p>
+<p>Speed: <%= @spaceship.speed %></p>
+<p>Capacity: <%= @spaceship.capacity %></p>
+<p>Location: <%= @spaceship.location %></p>
+<p>Price Per Day: <%= @spaceship.price_per_day %></p>
+
+<%= link_to 'HomePage', users_path %>
+<!-- This html page just shows the basic attributes of a specific spaceship -->
+
+
+
