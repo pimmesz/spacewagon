@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :spaceships
 
   validates :first_name, :last_name, :email, presence: true
+  
   validates :email, format: { with: /(\A([a-z]*\s*)*\<*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\>*\Z)/i }
   validates :email, uniqueness: true
 end
