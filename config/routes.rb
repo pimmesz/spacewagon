@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
+  # get 'users/index'
 
-  get 'bookings/new'
+  # get 'users/new'
 
-  get 'bookings/show'
+  # get 'users/show'
 
   devise_for :users
   root to: 'pages#home'
+
+  resources :users
   resources :bookings
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
