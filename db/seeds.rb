@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!({email: "aly@gmail.com", password: "123478878", first_name: "Omar", last_name: "Youssef"})
+# user = User.create!({email: "aly@gmail.com", password: "123478878", first_name: "Omar", last_name: "Youssef"})
 
-spaceship = Spaceship.create!({name: "Crusher", captain: "Zaphod beeblebrox", location: "Babylon", speed: 3000, capacity: 12, price_per_day: 6000000, user_id: user.id})
+spaceship = Spaceship.create!({name: "Crusher", captain: "Zaphod beeblebrox", location: "Babylon", speed: 3000, capacity: 12, price_per_day: 6000000, user: User.last})
 
 
 
