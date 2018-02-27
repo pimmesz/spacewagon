@@ -3,13 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :email, presence: true
 
-  validates :last_name, presence: true
-  validates :first_name, presence: true
+  has_many :bookings
+  has_many :spaceships
 
-  # Signup breaks with this validation! Added validation to simple_form_for
-
+  validates :first_name, :last_name, :email, presence: true
+  
   validates :email, format: { with: /(\A([a-z]*\s*)*\<*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\>*\Z)/i }
   validates :email, uniqueness: true
 end
