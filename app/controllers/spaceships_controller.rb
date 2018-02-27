@@ -6,9 +6,16 @@ class SpaceshipsController < ApplicationController
   end
 
   def new
+    @spaceship = Spaceship.new
   end
 
   def create
+    @spaceship = Spaceship.new(spaceship_params)
+    if @spaceship.save
+      redirect_to spaceship_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,6 +25,12 @@ class SpaceshipsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def spaceship_params
+    params.require(:spaceship).permit(:name, :photo, :captain, :location, :speed, :capacity, :price_per_day)
   end
 end
 
