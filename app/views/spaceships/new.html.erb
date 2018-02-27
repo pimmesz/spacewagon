@@ -1,2 +1,22 @@
-<h1>Spaceships#new</h1>
-<p>Find me in app/views/spaceships/new.html.erb</p>
+<h1>Add your Spaceship</h1>
+<%= simple_form_for(@spaceship) do |f| %>
+  <% if @Spaceship.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @spaceship.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :name %>
+  <%#= f.input :photo %>
+  <%#= f.input :photo_cache, as: :hidden %>
+  <%= f.input :captain %>
+  <%= f.input :location %>
+  <%= f.input :speed, as: :integer %>
+  <%= f.input :capacity, as: :integer %>
+  <%= f.input :price_per_day, as: :integer %>
+  <%= f.button :submit %>
+<% end %>
