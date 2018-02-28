@@ -25,14 +25,19 @@ class SpaceshipsController < ApplicationController
   end
 
   def edit
+    @spaceship = Spaceship.find(params[:id])
     authorize @spaceship
   end
 
   def update
+    @spaceship = Spaceship.find(params[:id])
     authorize @spaceship
+    @spaceship.update(spaceship_params)
+    redirect_to spaceship_path(@spaceship)
   end
 
   def destroy
+    @spaceship = Spaceship.find(params[:id])
     authorize @spaceship
   end
 
@@ -42,4 +47,3 @@ class SpaceshipsController < ApplicationController
     params.require(:spaceship).permit(:name, :photo, :captain, :location, :speed, :capacity, :price_per_day)
   end
 end
-
