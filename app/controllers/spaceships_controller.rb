@@ -1,14 +1,17 @@
 class SpaceshipsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
+    @spaceships = policy_scope(Spaceship).order(created_at: :desc)
   end
 
   def show
     @spaceship = Spaceship.find(params[:id])
+    authorize @spaceship
   end
 
   def new
     @spaceship = Spaceship.new
+    authorize @spaceship
   end
 
   def create
@@ -18,15 +21,19 @@ class SpaceshipsController < ApplicationController
     else
       render :new
     end
+    authorize @spaceship
   end
 
   def edit
+    authorize @spaceship
   end
 
   def update
+    authorize @spaceship
   end
 
   def destroy
+    authorize @spaceship
   end
 
   private
