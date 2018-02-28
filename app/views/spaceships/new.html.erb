@@ -1,6 +1,6 @@
 <h1>Add your Spaceship</h1>
 <%= simple_form_for(@spaceship) do |f| %>
-  <% if @Spaceship.errors.any? %>
+  <% if @spaceship.errors.any? %>
     <div class="errors-container">
       <ul>
         <% @spaceship.errors.full_messages.each do |message| %>
