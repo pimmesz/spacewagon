@@ -12,5 +12,6 @@ class User < ApplicationRecord
   has_many :spaceships
   has_many :my_spaceships_bookings, through: :spaceships, source: :bookings
 
+  mount_uploader :photo, PhotoUploader
 
 end

@@ -11,14 +11,12 @@
   <% end %>
 
   <%= f.input :name %>
-  <%#= f.input :photo %>
-  <%#= f.input :photo_cache, as: :hidden %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.input :captain %>
   <%= f.input :location %>
   <%= f.input :speed, as: :integer %>
   <%= f.input :capacity, as: :integer %>
   <%= f.input :price_per_day, as: :integer %>
-  <%#= f.hidden_field :user_id, :value :current_user.id %>
-  <%#= f.hidden_field :user_id, as: :string, input_html: {id: current_user.id} %>
   <%= f.button :submit %>
 <% end %>
