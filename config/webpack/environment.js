@@ -9,4 +9,5 @@ environment.plugins.set('Provide',
     jQuery: 'jquery'
   })
 )
+
 module.exports = environment
