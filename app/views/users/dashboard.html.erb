@@ -1,10 +1,26 @@
-<h1>Users#show</h1>
+<h1>My Profile</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
 <%= @user.id %>
 <%= @user.first_name %>
 <%= @user.last_name %>
 <%= @user.email %>
+
+<h2>Spaceships I rented</h2>
+<%= @user.bookings.each do |booking| %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+  <%= booking.spaceship.name %>
+  <% end %>
+
+<h2>Bookings of my Spaceship(s)</h2>
+<%= @user.my_spaceships_bookings do |msb| %>
+  <%= msb.name %>
+  <%= msb.start_date %>
+  <%= msb.end_date %>
+  <%= msb.first_name %>
+  <%= msb.last_name %>
+  <% end %>
 
 <%= link_to "Update", edit_user_registration_path %>
 <%= link_to "Home", root_path %>

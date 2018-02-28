@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :spaceships
-  
-  validates :email, format: { with: /(\A([a-z]*\s*)*\<*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\>*\Z)/i }
-  validates :email, uniqueness: true
+  has_many :my_spaceships_bookings, through: :spaceships, source: :bookings
+
+
 end
