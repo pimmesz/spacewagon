@@ -13,6 +13,7 @@
       <li>Capacity: <%= s.capacity %> </li>
       <li>Price per day: <%= s.price_per_day %> </li>
     </ul>
+    <%= cl_image_tag s.photo, height: 300, width: 400, crop: :fill %>
     <br>
     <% end %>
 
