@@ -8,6 +8,7 @@
   <% @spaceships.each do |s| %>
     <h4><%= link_to s.name, spaceship_path(s) %> </h4>
     <ul>
+      <li>Owner: <%= s.user.first_name %> <%= s.user.last_name %></li>
       <li>Captain: <%= s.captain %> </li>
       <li>Location: <%= s.location %> </li>
       <li>Capacity: <%= s.capacity %> </li>
