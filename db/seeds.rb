@@ -1,6 +1,3 @@
-# User.destroy_all
-# Spaceship.destroy_all
-
 users = []
 20.times do
   user = User.create!(
