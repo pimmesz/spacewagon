@@ -17,6 +17,19 @@
   </ul>
   <% end %>
 
+<h3>Spaceships I own</h3>
+  <% @user.spaceships.each do |s| %>
+  <ul>
+    <li><%= s.name %></li>
+    <li>Captain: <%= s.captain %> </li>
+    <li>Location: <%= s.location %> </li>
+    <li>Capacity: <%= s.capacity %> </li>
+    <li>Price per day: <%= s.price_per_day %> </li>
+  </ul>
+  <%= cl_image_tag s.photo, height: 300, width: 400, crop: :fill %>
+  <br>
+  <% end %>
+
 <h3>Bookings of my spaceship</h3>
 <% @user.my_spaceships_bookings do |msb| %>
   <%= msb.name %>
