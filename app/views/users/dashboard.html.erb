@@ -2,15 +2,19 @@
 
 <br>
 <h3>My personal data</h3>
-<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
-<p>Email: <%= @user.email %></p>
-<p>User id: <%= @user.id %></p>
+<ul>
+  <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
+  <li>Email: <%= @user.email %></li>
+  <li>User id: <%= @user.id %></li>
+</ul>
 
 <h3>Spaceships I rented</h3>
-<%= @user.bookings.each do |booking| %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
-  <%= booking.spaceship.name %>
+<% @user.bookings.each do |booking| %>
+  <ul>
+    <li>Start date: <%= booking.start_date %></li>
+    <li>End date: <%= booking.end_date %></li>
+    <li><%= booking.spaceship.name %></li>
+  </ul>
   <% end %>
 
 <h3>Bookings of my spaceship</h3>
