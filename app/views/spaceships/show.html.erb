@@ -7,6 +7,6 @@
 
 <%= link_to 'HomePage', root_path %>
 <%= link_to 'Request to rent', new_spaceship_booking_path(@spaceship) %>
-<!-- This html page just shows the basic attributes of a specific spaceship -->
-
-
+<% if policy(@spaceship).edit? %>
+  <%= link_to 'Edit Spaceship', edit_spaceship_path(@spaceship) %>
+<% end %>

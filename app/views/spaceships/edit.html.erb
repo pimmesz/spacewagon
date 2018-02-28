@@ -1,2 +1,11 @@
-<h1>Spaceships#edit</h1>
-<p>Find me in app/views/spaceships/edit.html.erb</p>
+<h1>Edit Spaceship</h1>
+<%= simple_form_for @spaceship do |f| %>
+  <%= f.input :name %>
+  <%= f.input :captain %>
+  <%= f.input :location %>
+  <%= f.input :speed %>
+  <%= f.input :capacity %>
+  <%= f.input :price_per_day %>
+  <%= f.button :submit %>
+<% end %>
+
