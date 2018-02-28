@@ -2,6 +2,14 @@ class SpaceshipsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @spaceships = policy_scope(Spaceship).order(created_at: :desc)
+
+    @markers = @spaceships.map do |spaceship|
+      {
+        lat: spaceship.latitude,
+        lng: spaceship.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
@@ -16,8 +24,9 @@ class SpaceshipsController < ApplicationController
 
   def create
     @spaceship = Spaceship.new(spaceship_params)
+    @spaceship.user = current_user
     if @spaceship.save
-      redirect_to spaceship_path
+      redirect_to spaceship_path(@spaceship)
     else
       render :new
     end
