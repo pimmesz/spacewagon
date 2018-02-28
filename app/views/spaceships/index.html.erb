@@ -3,11 +3,12 @@
 <h3>SpaceWagon brings great spaceships to adventurous people<h3>
 
 <br>
-<h3>Spaceships around the galaxy</h3>
+<h3>Spaceships near you</h3>
 <br>
   <% @spaceships.each do |s| %>
     <h4><%= link_to s.name, spaceship_path(s) %> </h4>
     <ul>
+      <li>Owner: <%= s.user.first_name %> <%= s.user.last_name %></li>
       <li>Captain: <%= s.captain %> </li>
       <li>Location: <%= s.location %> </li>
       <li>Capacity: <%= s.capacity %> </li>
