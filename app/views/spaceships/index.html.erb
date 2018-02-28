@@ -4,5 +4,15 @@
 <h3>Spaceships around the galaxy</h3>
 <br>
 
+<ul>
+  <% @spaceships.each do |s| %>
+    <li>Name of spaceship: <%= s.name %> </li>
+    <li>Captain: <%= s.captain %> </li>
+    <li>Location: <%= s.location %> </li>
+    <li>Capacity: <%= s.capacity %> </li>
+    <li>Price per day: <%= s.price_per_day %> </li>
+    <% end %>
+</ul>
+
 <%= link_to "Dashboard", dashboard_path %>
 
