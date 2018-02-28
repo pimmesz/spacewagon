@@ -4,15 +4,16 @@
 
 <br>
 <h3>Spaceships around the galaxy</h3>
-
+<br>
   <% @spaceships.each do |s| %>
-    <h4>Name of spaceship: <%= s.name %> </h4>
+    <h4><%= s.name %> </h4>
     <ul>
       <li>Captain: <%= s.captain %> </li>
       <li>Location: <%= s.location %> </li>
       <li>Capacity: <%= s.capacity %> </li>
       <li>Price per day: <%= s.price_per_day %> </li>
     </ul>
+    <br>
     <% end %>
 
 <div
