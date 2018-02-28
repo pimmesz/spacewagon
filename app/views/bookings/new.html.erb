@@ -1,6 +1,11 @@
 <h1>Book a Spaceship</h1>
 
 <%= form_for [@spaceship, @booking] do |f| %>
+  <% if @booking.errors.any? %>
+    <% @booking.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
   <%= f.label :start_date %>
   <%= f.date_field :start_date, { class: 'datepicker' } %>
   <%= f.label :end_date %>
