@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @spaceship = Spaceship.find(params[:spaceship_id])
     @booking.spaceship = Spaceship.find(params[:spaceship_id])
     @booking.user = current_user
     authorize @booking
