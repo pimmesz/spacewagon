@@ -18,7 +18,9 @@
 <% end %>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
+  <div class="body-margin">
   <%= yield %>
+  </div>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
