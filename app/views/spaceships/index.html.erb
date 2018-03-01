@@ -17,6 +17,14 @@
       <div class="row">
         <h4>Your spaceships</h4>
 
+<%= form_tag spaceships_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search a Spaceship"
+  %>
+<% end %>
+
         <% @spaceships.each do |s| %>
         <div class="col-xs-4">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
@@ -33,7 +41,8 @@
           </div>
         </div>
         <% end %>
-        <% end %>
+        
+ <% end %>
 
         <h4>Spaceships near you</h4>
         <% @spaceships.each do |s| %>
