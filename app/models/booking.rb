@@ -9,7 +9,7 @@ validate :date_validation_past
 
 def date_validation
   if self[:end_date] < self[:start_date]
-    errors[:end_date] << "can't be before the start date"
+    errors[:end_date] << "End date can't be before the start date"
     return false
   else
     return true
@@ -20,7 +20,7 @@ def date_validation_past
   if self[:start_date] >= DateTime.now.to_date
     true
   else
-    errors[:start_date] << "can't be in the past"
+    errors[:start_date] << "Start date can't be in the past"
     return false
   end
 end
