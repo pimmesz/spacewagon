@@ -2,9 +2,22 @@
 <br>
 <h3>SpaceWagon brings great spaceships to adventurous people<h3>
 
+<%= form_tag spaceships_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search a Spacehship"
+  %>
+<% end %>
+
 <br>
+
 <h3>Spaceships near you</h3>
+
 <br>
+
+<% if @spaceships %>
+
   <% @spaceships.each do |s| %>
     <h4><%= link_to s.name, spaceship_path(s) %> </h4>
     <ul>
@@ -17,7 +30,7 @@
     <%= cl_image_tag s.photo, height: 300, width: 400, crop: :fill %>
     <br>
     <% end %>
-
+<% end %>
 <div
   id="map"
   style="width: 100%;
@@ -26,4 +39,3 @@
 ></div>
 
 <%= link_to "Dashboard", dashboard_path %>
-
