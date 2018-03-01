@@ -12,7 +12,23 @@
 
 <h1>Change your life: <br>rent a spaceship</h1>
 <br>
-<h3>SpaceWagon brings great spaceships to adventurous people</h3>
+<h3>Your spaceships</h3>
+
+<% @spaceships.each do |s| %>
+    <% if current_user.id == s.user_id %>
+    <h4><%= link_to s.name, spaceship_path(s) %> </h4>
+    <ul>
+      <li>Owner: <%= s.user.first_name %> <%= s.user.last_name %></li>
+      <li>Captain: <%= s.captain %> </li>
+      <li>Location: <%= s.location %> </li>
+      <li>Capacity: <%= s.capacity %> </li>
+      <li>Price per day: <%= s.price_per_day %> </li>
+    </ul>
+    <%= cl_image_tag s.photo, height: 300, width: 400, crop: :fill %>
+    <br>
+    <% end %>
+    <% end %>
+
 
 <br>
 <h3>Spaceships near you</h3>
