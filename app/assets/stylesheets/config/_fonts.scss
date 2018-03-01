@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
 
 // Define fonts for body and headers
-$body-font: "Space Mono", monospace;
-$headers-font: "Space Mono", monospace;
+$body-font: "Space Mono", "Helvetica", "sans-serif";
+$headers-font: "Space Mono", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
