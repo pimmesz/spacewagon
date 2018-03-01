@@ -1,4 +1,4 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
@@ -22,6 +22,11 @@
             <li>
               <%= link_to dashboard_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "My Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out-alt"></i> <%= t(".profile", default: "Log out") %>
               <% end %>
             </li>
           </ul>
