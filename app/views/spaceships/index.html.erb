@@ -1,29 +1,37 @@
-<h1>Change your life: <br>rent a spaceship</h1>
-<br>
-<h3>SpaceWagon brings great spaceships to adventurous people<h3>
+<!-- <h1>Change your life: rent a spaceship</h1>
+  <h3>SpaceWagon brings great spaceships to adventurous people<h3>
+ -->
+    <%#= link_to "Dashboard", dashboard_path %>
+    <div class="container">
+      <div class="row">
+        <h3>Spaceships near you</h3>
+        <div class="col-xs-8">
+          <div class="cards-container">
+            <div class="row">
+              <% @spaceships.each do |s| %>
+              <div class="col-xs-4">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
+                  <div class="overlay">
+                    <h4><%= link_to s.name, spaceship_path(s) %> </h4>
+                    <br>Location: <%= s.location %>
+                    <br>Capacity: <%= s.capacity %>
+                    <br>Price per day: <%= s.price_per_day %>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div
+          id="map"
+          data-markers="<%= @markers.to_json %>">
+        </div>
+      </div>
+    </div>
+  </div>
 
-<br>
-<h3>Spaceships near you</h3>
-<br>
-  <% @spaceships.each do |s| %>
-    <h4><%= link_to s.name, spaceship_path(s) %> </h4>
-    <ul>
-      <li>Owner: <%= s.user.first_name %> <%= s.user.last_name %></li>
-      <li>Captain: <%= s.captain %> </li>
-      <li>Location: <%= s.location %> </li>
-      <li>Capacity: <%= s.capacity %> </li>
-      <li>Price per day: <%= s.price_per_day %> </li>
-    </ul>
-    <%= cl_image_tag s.photo, height: 300, width: 400, crop: :fill %>
-    <br>
-    <% end %>
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
-
-<%= link_to "Dashboard", dashboard_path %>
+  <%#= link_to "Dashboard", dashboard_path %>
 
