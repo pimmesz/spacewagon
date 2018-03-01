@@ -14,13 +14,19 @@
   <% unless notice.nil? %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <%= render 'shared/flashes' %>
   </div>
 <% end %>
   <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
+  <% if notice.nil? %>
   <div class="body-margin">
-  <%= yield %>
+    <%= yield %>
   </div>
+  <% else %>
+  <div>
+    <%= yield %>
+  </div>
+  <% end %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>

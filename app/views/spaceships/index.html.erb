@@ -9,44 +9,32 @@
   </div>
   <div class="stars3"></div>
 </div>
+
 <div class="container">
   <div class="row">
-   <h3>Spaceships</h3>
-   <div class="col-xs-8">
-    <div class="cards-container">
-      <div class="row">
-        <h4>Your spaceships</h4>
+    <div class="col-xs-9">
 
-        <%= form_tag spaceships_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-          placeholder: "Search a Spaceship"
-          %>
-          <% end %>
-          <div class="row">
-            <h4>Spaceships near you</h4>
-            <% @spaceships.each do |s| %>
-            <% if current_user.present? && current_user.id == s.user_id %>
-            <div class="col-xs-6">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
-                <div class="overlay">
-                  <h4><%= link_to s.name, spaceship_path(s) %> </h4>
-                  <br>Location: <%= s.location %>
-                  <br>Capacity: <%= s.capacity %>
-                  <br>Price per day: <%= s.price_per_day %>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="spaceshipcards">
+        <div>
+          <h3>Spaceships</h3>
         </div>
-        <% end %>
-        <% end %>
+        <div class="search">
+          <%= form_tag spaceships_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+            placeholder: "Search a Spaceship"
+            %>
+            <% end %>
+          </div>
 
-        <div class="row">
-          <h4>Spaceships near you</h4>
-          <% @spaceships.each do |s| %>
-          <div class="col-xs-6">
+
+          <div>
+            <h4>Spaceships near you</h4>
+          </div>
+          <div class="flex">
+            <% @spaceships.each do |s| %>
+
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
               <div class="overlay">
                 <h4><%= link_to s.name, spaceship_path(s) %> </h4>
@@ -55,17 +43,21 @@
                 <br>Price per day: <%= s.price_per_day %>
               </div>
             </div>
+            <% end %>
           </div>
-          <% end %>
-
         </div>
       </div>
-    </div>
-    <div class="col-xs-4">
-      <div
-      id="map"
-      data-markers="<%= @markers.to_json %>">
+
+
+      <div class="col-xs-3">
+        <div
+        id="map"
+        data-markers="<%= @markers.to_json %>">
+      </div>
     </div>
   </div>
-</div>
-</div>
+
+
+
+
+
