@@ -1,16 +1,24 @@
 class SpaceshipsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @spaceships = policy_scope(Spaceship).order(created_at: :desc)
-
-    @spaceships = Spaceship.where.not(latitude: nil, longitude: nil)
-
-    @markers = @spaceships.map do |spaceship|
-      {
-        lat: spaceship.latitude,
-        lng: spaceship.longitude#,
-        #infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }
+    policy_scope(Spaceship)
+    if params[:query].present?
+      results = PgSearch.multisearch(params[:query])
+      @spaceships = []
+      results.each do |result|
+        @spaceships << result.searchable
+      end
+    else
+      @spaceships = Spaceship.order(created_at: :desc)
+      @spaceships = Spaceship.where.not(latitude: nil, longitude: nil)
+      @markers = @spaceships.map do |spaceship|
+        {
+          lat: spaceship.latitude,
+          lng: spaceship.longitude#,
+          #infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        }
+      end
     end
   end
 

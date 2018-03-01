@@ -16,6 +16,15 @@
     <div class="cards-container">
       <div class="row">
         <h4>Your spaceships</h4>
+
+  <%= form_tag spaceships_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search a Spaceship"
+  %>
+<% end %>
+
         <% @spaceships.each do |s| %>
         <% if current_user.id == s.user_id %>
         <div class="col-xs-4">
