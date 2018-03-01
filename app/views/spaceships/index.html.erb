@@ -36,12 +36,15 @@
             <% @spaceships.each do |s| %>
 
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
+              <%= link_to spaceship_path(s), {:class => "display:block"} do %>
               <div class="overlay">
-                <h4><%= link_to s.name, spaceship_path(s) %> </h4>
+                <h4><%= s.name %> </h4>
                 <br>Location: <%= s.location %>
                 <br>Capacity: <%= s.capacity %>
                 <br>Price per day: <%= s.price_per_day %>
               </div>
+              <% end %>
+            </a>
             </div>
             <% end %>
           </div>
