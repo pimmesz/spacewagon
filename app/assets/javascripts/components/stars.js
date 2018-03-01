@@ -8,9 +8,11 @@ $(document).ready(function(){
 
   function stars1(){
     $('.stars1-one').css('top','0');
-    $('.stars1-two').css('top','20%');
+    $('.stars1-one').fadeIn(10000);
+    $('.stars1-two').css('top','50%');
+    $('.stars1-two').fadeIn(10000);
     $('.stars1-one').animate({
-      top: '-100%'
+      top: '-80%'
     }, 10000, 'linear');
     $('.stars1-two').animate({
       top: '0'
@@ -29,7 +31,9 @@ $(document).ready(function(){
 
   function stars2(){
     $('.stars2-one').css('top','0');
+    $('.stars2-one').fadeIn(10000);
     $('.stars2-two').css('top','50%');
+    $('.stars2-two').fadeIn(10000);
     $('.stars2-one').animate({
       top: '-100%'
     }, 15000, 'linear');
@@ -52,6 +56,7 @@ $(document).ready(function(){
     var randomNum = Math.random()*10;
     var ID = Math.round(randomNum);
     var starID = "#glowStar" + ID;
+    $(starID).fadeIn(10000);
     $(starID).animate({
       opacity: 1
     }, 1000, 'swing', function(){
