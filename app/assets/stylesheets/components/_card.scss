@@ -13,6 +13,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -moz-transform: scale(1,1);
+  -webkit-transform: scale(1,1);
+  transform: scale(1,1);
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
 
 .card a {
@@ -30,6 +40,9 @@
 .card:hover {
   text-shadow: 1 1 0px rgba(0,0,0,0.7);
   color: white;
+  -moz-transform: scale(1.05,1.05);
+  -webkit-transform: scale(1.05,1.05);
+  transform: scale(1.05,1.05);
 }
 
 .overlay {
