@@ -1,0 +1,21 @@
+.button {
+  background-color: transparent;
+  // font-family: PT Sans;
+  font-style: normal;
+  font-size: 15px;
+  margin-left: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 0px;
+  border: 2px solid #204B93;
+  color: #204B93;
+  font-weight: 400;
+  padding: 1em 1.5em !important;
+  }
+
+.button:hover {
+  background-color: #204B93;
+  color: white;
+  transition: background-color .1s 0s ease-in-out;
+  transition: color .1s 0s ease-in-out;
+}
