@@ -9,15 +9,32 @@
 </div>
 <div class="stars3"></div>
 </div>
-<h1>Change your life: rent a spaceship</h1>
-<h3>SpaceWagon brings great spaceships to adventurous people<h3>
-
 <div class="container">
-      <div class="row">
-        <h3>Spaceships near you</h3>
+  <div class="row">
+   <h3>Spaceships</h3> 
         <div class="col-xs-8">
           <div class="cards-container">
             <div class="row">
+        <h4>Your spaceships</h4>
+                            
+              <% @spaceships.each do |s| %>
+              <div class="col-xs-4">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
+                  <div class="overlay">
+
+                  <% if current_user.id == s.user_id %>
+                  <h4><%= link_to s.name, spaceship_path(s) %> </h4>
+    <ul>
+      <li>Location: <%= s.location %> </li>
+      <li>Capacity: <%= s.capacity %> </li>
+      <li>Price per day: <%= s.price_per_day %> </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+
+              <h4>Spaceships near you</h4>
               <% @spaceships.each do |s| %>
               <div class="col-xs-4">
                 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
@@ -30,6 +47,7 @@
                 </div>
               </div>
               <% end %>
+              
             </div>
           </div>
         </div>

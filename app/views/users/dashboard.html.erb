@@ -13,7 +13,7 @@
   <ul>
     <li>Start date: <%= booking.start_date %></li>
     <li>End date: <%= booking.end_date %></li>
-    <li><%= booking.spaceship.name %></li>
+    <li><%= link_to booking.spaceship.name, spaceship_path(booking.spaceship) %></li>
   </ul>
   <% end %>
 
