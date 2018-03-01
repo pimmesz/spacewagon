@@ -1,7 +1,5 @@
 const { environment } = require('@rails/webpacker')
 
-// In the config/webpack/environment.js
-
 const webpack = require('webpack')
 environment.plugins.set('Provide',
   new webpack.ProvidePlugin({
@@ -9,5 +7,4 @@ environment.plugins.set('Provide',
     jQuery: 'jquery'
   })
 )
-
 module.exports = environment
