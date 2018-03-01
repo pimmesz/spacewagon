@@ -1,0 +1,91 @@
+.stars-background{
+  background: linear-gradient(to bottom, #000000 20%, #16222A 60%, #3A6073);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.startext h1 {
+ color: white;
+ font-weight: bold;
+ font-size: 100px;
+}
+
+.starbutton {
+  z-index: 500;
+}
+
+.startext h3 {
+ color: white;
+ font-weight: normal;
+ font-size: 30px;
+ margin-bottom: 50px;
+}
+
+.stars1{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.stars1-one{
+  top: 0;
+  left: 0;
+}
+
+.stars1-two{
+  top: 100%;
+  left: 0;
+}
+
+.stars1-star{
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.stars2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.stars2-one{
+  top: 0;
+  left: 0;
+}
+
+.stars2-two{
+  top: 100%;
+  left: 0;
+}
+
+.stars2-star{
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.stars3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.stars3-star{
+  position: absolute;
+  opacity: 0;
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}

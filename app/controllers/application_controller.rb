@@ -10,10 +10,6 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
-  def after_sign_in_path_for(resource_or_scope)
-    dashboard_path
-  end
-
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
@@ -24,5 +20,5 @@ class ApplicationController < ActionController::Base
    devise_parameter_sanitizer.permit(:sign_up, keys: [:photo, :photo_cache, :first_name, :last_name, address_attributes: [:country, :state, :city, :area, :postal_code]])
    devise_parameter_sanitizer.permit(:account_update, keys: [:photo, :photo_cache, :first_name, :last_name, address_attributes: [:country, :state, :city, :area, :postal_code]])
 
-  end
+ end
 end

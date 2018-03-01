@@ -23,6 +23,7 @@ gem 'webpacker'
 gem 'faker'
 gem 'simple_form'
 gem 'pg_search'
+gem 'jquery-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
