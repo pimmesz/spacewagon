@@ -7,20 +7,26 @@
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  <%= stylesheet_pack_tag 'application' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js, Steef uncommended this because he needs it for his form-->
 
 </head>
 <body>
   <% unless notice.nil? %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <%= render 'shared/flashes' %>
   </div>
 <% end %>
   <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
+  <% if notice.nil? %>
   <div class="body-margin">
-  <%= yield %>
+    <%= yield %>
   </div>
+  <% else %>
+  <div>
+    <%= yield %>
+  </div>
+  <% end %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>

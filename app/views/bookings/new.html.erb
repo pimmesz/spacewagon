@@ -1,14 +1,10 @@
-<h1>Book a Spaceship</h1>
-
-<%= form_for [@spaceship, @booking] do |f| %>
-  <% if @booking.errors.any? %>
-    <% @booking.errors.full_messages.each do |message| %>
-      <p><%= message %></p>
+<div class="container">
+  <div class="form-wrapper" style="width: 500px, margin: 0 auto;">
+    <h1>Book a Spaceship</h1>
+    <%= simple_form_for [@spaceship, @booking] do |f| %>
+    <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+    <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+    <%= f.button :submit %>
     <% end %>
-  <% end %>
-  <%= f.label :start_date %>
-  <%= f.date_field :start_date, { class: 'datepicker' } %>
-  <%= f.label :end_date %>
-  <%= f.date_field :end_date, { class: 'datepicker' } %>
-  <%= f.submit %>
-<% end %>
+  </div>
+</div>
