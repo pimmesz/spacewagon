@@ -14,5 +14,3 @@ class Spaceship < ApplicationRecord
   include PgSearch
   multisearchable against: [ :name, :captain ]
 end
-
-
