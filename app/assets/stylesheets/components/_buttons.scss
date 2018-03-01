@@ -17,10 +17,11 @@
 
 
 .button:hover {
-  background-color: #204B93 !important;
+  background-color: #3ac162 !important;
+  border: 1px #3ac162 !important;
   color: white !important;
   text-decoration: none;
-  transition: background-color .1s 0s ease-in-out !important;
-  transition: color .1s 0s ease-in-out !important;
+  transition: background-color .2s 0s ease-in-out !important;
+  transition: color .2s 0s ease-in-out !important;
   z-index: 5000;
 }
