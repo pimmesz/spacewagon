@@ -1,3 +1,7 @@
+.above-stars {
+  z-index: 1000 !important;
+}
+
 .stars-background{
   background: linear-gradient(to bottom, #000000 20%, #16222A 60%, #3A6073);
   height: 100vh;
