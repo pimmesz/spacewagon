@@ -2,9 +2,9 @@
   width: 425px;
   height: 300px;
   flex: 0 0 450px;
-  height: 80vh;
+  height: 85vh;
   position: fixed !important; /* !important to override Gmaps inline CSS */
   bottom: 0 !important;
   z-index: -1;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }

@@ -1,7 +1,12 @@
+.cards-container h4 {
+  padding-left: 15px;
+}
+
 .card {
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 250px;
+  width: 350px;
   border-radius: 1px;
   color: transparent;
   font-size: 14px;
@@ -27,7 +32,7 @@
 
 .card a {
   color: white;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: bolder;
 }
 
@@ -46,9 +51,10 @@
 }
 
 .overlay {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: rgba(248, 247, 216, 0.0);
   color: rgba(32,75,147,0.0);
   position: absolute;
@@ -61,7 +67,6 @@
   transition: background-color 300ms ease-in;
 }
 .overlay:hover {
-  background-color: rgba(255, 255, 255, 0.2);
   color: white;
   // color: rgba(32,75,147,1);
   -webkit-transition: color 300ms ease-in;
