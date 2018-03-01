@@ -16,25 +16,23 @@
     <div class="cards-container">
       <div class="row">
         <h4>Your spaceships</h4>
-
         <% @spaceships.each do |s| %>
+        <% if current_user.id == s.user_id %>
         <div class="col-xs-4">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
             <div class="overlay">
-
-              <% if current_user.id == s.user_id %>
               <h4><%= link_to s.name, spaceship_path(s) %> </h4>
-              <ul>
-                <li>Location: <%= s.location %> </li>
-                <li>Capacity: <%= s.capacity %> </li>
-                <li>Price per day: <%= s.price_per_day %> </li>
-              </ul>
+              <br>Location: <%= s.location %>
+              <br>Capacity: <%= s.capacity %>
+              <br>Price per day: <%= s.price_per_day %>
             </div>
           </div>
         </div>
         <% end %>
         <% end %>
+      </div>
 
+      <div class="row">
         <h4>Spaceships near you</h4>
         <% @spaceships.each do |s| %>
         <div class="col-xs-4">
@@ -48,6 +46,8 @@
           </div>
         </div>
         <% end %>
+
+
 
       </div>
     </div>
