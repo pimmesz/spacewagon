@@ -8,7 +8,7 @@ $(document).ready(function(){
 
   function stars1(){
     $('.stars1-one').css('top','0');
-    $('.stars1-two').css('top','100%');
+    $('.stars1-two').css('top','20%');
     $('.stars1-one').animate({
       top: '-100%'
     }, 10000, 'linear');
@@ -29,7 +29,7 @@ $(document).ready(function(){
 
   function stars2(){
     $('.stars2-one').css('top','0');
-    $('.stars2-two').css('top','100%');
+    $('.stars2-two').css('top','50%');
     $('.stars2-one').animate({
       top: '-100%'
     }, 15000, 'linear');
