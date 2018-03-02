@@ -24,7 +24,7 @@
 }
 
 .flex-card {
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -110,4 +110,14 @@
   -webkit-transition: color 300ms ease-in;
   -ms-transition: color 300ms ease-in;
   transition: color 300ms ease-in;
+}
+
+.flexcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexform {
+  width: 50vw;
 }
