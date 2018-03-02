@@ -13,8 +13,8 @@
       <p>Price Per Day: <%= @spaceship.price_per_day %></p>
       <%= cl_image_tag @spaceship.photo, height: 300, width: 400, crop: :fill %>
 
-      <%= link_to 'HomePage', root_path %>
-      <%= link_to 'Request to rent', new_spaceship_booking_path(@spaceship) %>
+      <%= link_to 'Homepage', root_path %>
+      <%= link_to 'Create a Booking', new_spaceship_booking_path(@spaceship) %>
       <% if policy(@spaceship).edit? %>
       <%= link_to 'Edit Spaceship', edit_spaceship_path(@spaceship) %>
       <% end %>
