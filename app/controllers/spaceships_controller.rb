@@ -11,7 +11,7 @@ class SpaceshipsController < ApplicationController
         @markers = @spaceships.map do |spaceship|
         {
           lat: spaceship.latitude,
-          lng: spaceship.longitude#,
+          lng: spaceship.longitude,
         }
       end
       end
@@ -21,7 +21,8 @@ class SpaceshipsController < ApplicationController
       @markers = @spaceships.map do |spaceship|
         {
           lat: spaceship.latitude,
-          lng: spaceship.longitude#,
+          lng: spaceship.longitude,
+          infoWindow: { content: spaceship.name }
         }
       end
     end
