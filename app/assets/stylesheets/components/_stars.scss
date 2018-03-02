@@ -15,6 +15,16 @@
  font-size: 100px;
 }
 
+@media (max-width: 768px) {
+  .startext h1 {
+    font-size: 56px;
+  }
+
+  .startext h3 {
+    font-size: 16px;
+  }
+}
+
 .starbutton {
   z-index: 500;
 }
