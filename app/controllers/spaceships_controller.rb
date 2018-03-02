@@ -8,6 +8,12 @@ class SpaceshipsController < ApplicationController
       @spaceships = []
       results.each do |result|
         @spaceships << result.searchable
+        @markers = @spaceships.map do |spaceship|
+        {
+          lat: spaceship.latitude,
+          lng: spaceship.longitude#,
+        }
+      end
       end
     else
       @spaceships = Spaceship.order(created_at: :desc)
