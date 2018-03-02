@@ -4,7 +4,7 @@ users = []
     first_name: Faker::HitchhikersGuideToTheGalaxy.character.to_s,
     last_name: Faker::HitchhikersGuideToTheGalaxy.planet.to_s,
     email: Faker::Internet.email,
-    password: "Password"
+    password: "password"
     # avatar: Faker::Avatar.image
     )
   users << user
