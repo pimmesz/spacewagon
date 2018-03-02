@@ -34,8 +34,8 @@
           <h3>Bookings of my spaceship</h3>
           <% @user.my_spaceships_bookings do |msb| %>
           <%= msb.name %>
-          <%= msb.start_date %>
-          <%= msb.end_date %>
+          <%= msb.start_date.strftime("%b %d %Y") %>
+          <%= msb.end_date.strftime("%b %d %Y") %>
           <%= msb.first_name %>
           <%= msb.last_name %>
           <% end %>
@@ -46,8 +46,8 @@
           <% @user.bookings.each do |booking| %>
           <ul>
             <li><%= link_to booking.spaceship.name, spaceship_path(booking.spaceship) %></li>
-            <li>Start date: <%= booking.start_date %></li>
-            <li>End date: <%= booking.end_date %></li>
+            <li>Start date: <%= booking.start_date.strftime("%b %d %Y") %></li>
+            <li>End date: <%= booking.end_date.strftime("%b %d %Y") %></li>
           </ul>
           <% end %>
         </div>
