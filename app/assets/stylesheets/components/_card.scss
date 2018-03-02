@@ -30,7 +30,25 @@
   flex-wrap: wrap;
 }
 
-.card {
+.card-dashboard{
+width: 400px !important;
+height: 300px !important;
+}
+
+.card-dashboard h3{
+color: white;
+}
+
+.card-dashboard a{
+  color: white;
+  text-decoration: none;
+}
+
+.card-dashboard:hover {
+text-decoration: none !important;
+}
+
+.card, .card-dashboard {
   background-size: cover;
   background-position: center;
   height: 250px;
@@ -120,4 +138,26 @@
 
 .flexform {
   width: 50vw;
+}
+
+.flexdashboard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.flexdashboarditems {
+  background: white;
+  height: 300px;
+  width: 400px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  background-size:  cover;
+}
+
+.flexdashboarditems img {
+  height: 300px;
+  width: 1000px !important;
 }
