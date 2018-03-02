@@ -51,14 +51,24 @@
         </div>
       </div>
 
-
-      <div class="col-xs-3">
-        <div
-        id="map"
-        data-markers="<%= @markers.to_json %>">
-      </div>
+    <div class="col-xs-3">
+      <div
+      id="map"
+      class="maphidden"
+      data-markers="<%= @markers.to_json %>">
     </div>
   </div>
+
+  <script>function mapScrolling() {
+    if (document.documentElement.scrollTop > 800) {
+      console.log("MORE THAN 500")
+        document.getElementById("map").className = "";
+    } else {
+        document.getElementById("map").className = "maphidden";
+    }
+}
+window.onscroll = mapScrolling;
+</script>
 
 
 
