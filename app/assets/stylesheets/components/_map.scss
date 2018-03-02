@@ -1,5 +1,5 @@
 #map {
-  width: 400px;
+  width: 22%;
   height: 300px;
   flex: 0 0 450px;
   height: 85vh;
@@ -9,4 +9,14 @@
   margin-bottom: 20px;
   margin-right: 20px;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  #map {
+    position: relative !important;
+    width: 100vw;
+  }
+  .map-container {
+    padding: 0;
+  }
+
 }
