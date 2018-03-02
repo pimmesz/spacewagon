@@ -11,6 +11,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    start_date = booking_params[:start_date][0..9]
+    end_date = booking_params[:start_date][-10..-1]
+    @booking.start_date = start_date
+    @booking.end_date = end_date
     @spaceship = Spaceship.find(params[:spaceship_id])
     @booking.spaceship = Spaceship.find(params[:spaceship_id])
     @booking.user = current_user
