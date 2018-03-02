@@ -35,12 +35,13 @@
           <% end %>
         </div>
 
-        <% if @spaceships %>
+        <div id="target-div">
+        <% if @spaceships.any? %>
 
         <div>
           <h4>Spaceships near you</h4>
         </div>
-        <div class="flex flex-card" id="target-div">
+        <div class="flex flex-card" >
           <% @spaceships.each do |s| %>
 
 
@@ -56,8 +57,13 @@
           </div>
           <% end %>
         </div>
-        <% end %>
 
+        <% else %>
+
+          <h4>No spaceships have been found</h4>
+
+        <% end %>
+</div>
       </div>
     </div>
   </div>
