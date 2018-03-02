@@ -4,14 +4,14 @@
 
 #map {
   width: 22%;
-  height: 80vh;
+  height: 70vh;
   flex: 0 0 450px;
   opacity: 1;
   position: fixed !important; /* !important to override Gmaps inline CSS */
   margin-bottom: 20px;
   margin-right: 20px;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
-  top: 100px;
+  top: 120px;
   transition: opacity 0.5s;
 }
 @media (max-width: 768px) {
