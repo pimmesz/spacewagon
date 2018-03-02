@@ -13,6 +13,7 @@
       <p>Capacity: <%= @spaceship.capacity %></p>
       <p>Location: <%= @spaceship.location %></p>
       <p>Price Per Day: <%= @spaceship.price_per_day %></p>
+      <p>Contact: <%= @spaceship.user.email %></p>
       <%= cl_image_tag @spaceship.photo, height: 300, width: 400, crop: :fill %>
       <%= link_to 'Homepage', root_path %>
       <%= link_to 'Create a Booking', new_spaceship_booking_path(@spaceship) %>
