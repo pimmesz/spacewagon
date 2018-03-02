@@ -16,6 +16,7 @@ class SpaceshipsController < ApplicationController
         {
           lat: spaceship.latitude,
           lng: spaceship.longitude#,
+          #infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
         }
       end
     end
@@ -24,21 +25,13 @@ class SpaceshipsController < ApplicationController
   def show
     @spaceship = Spaceship.find(params[:id])
     authorize @spaceship
-    policy_scope(Spaceship)
-    if params[:query].present?
-      results = PgSearch.multisearch(params[:query])
-    else
-      @spaceships = Spaceship.order(created_at: :desc)
-      @spaceships = Spaceship.where.not(latitude: nil, longitude: nil)
-      @markers = @spaceships.map do |spaceship|
-        {
-          lat: @spaceship.latitude,
-          lng: @spaceship.longitude
+    @markers =
+      {
+        lat: @spaceship.latitude,
+          lng: @spaceship.longitude#,
+          #infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
         }
       end
-    end
-  end
-
 
       def new
         @spaceship = Spaceship.new

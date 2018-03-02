@@ -1,24 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-9">
-      <div id="map" data-markers="<%= @markers.to_json %>">
-      </div>
-    </div>
-<div class="col-xs-3">
-      <h1>The <%= @spaceship.name %></h1>
-      <p>Captain: <%= @spaceship.captain %></p>
-      <p>Speed: <%= @spaceship.speed %></p>
-      <p>Capacity: <%= @spaceship.capacity %></p>
-      <p>Location: <%= @spaceship.location %></p>
-      <p>Price Per Day: <%= @spaceship.price_per_day %></p>
-      <%= cl_image_tag @spaceship.photo, height: 300, width: 400, crop: :fill %>
+<h1>The <%= @spaceship.name %></h1>
+<p>Captain: <%= @spaceship.captain %></p>
+<p>Speed: <%= @spaceship.speed %></p>
+<p>Capacity: <%= @spaceship.capacity %></p>
+<p>Location: <%= @spaceship.location %></p>
+<p>Price Per Day: <%= @spaceship.price_per_day %></p>
+<%= cl_image_tag @spaceship.photo, height: 300, width: 400, crop: :fill %>
 
-      <%= link_to 'HomePage', root_path %>
-      <%= link_to 'Request to rent', new_spaceship_booking_path(@spaceship) %>
-      <% if policy(@spaceship).edit? %>
-      <%= link_to 'Edit Spaceship', edit_spaceship_path(@spaceship) %>
-      <% end %>
-    </div>
-
-</div>
-</div>
+<%= link_to 'Homepage', root_path %>
+<%= link_to 'Create Booking', new_spaceship_booking_path(@spaceship) %>
+<% if policy(@spaceship).edit? %>
+  <%= link_to 'Edit Spaceship', edit_spaceship_path(@spaceship) %>
+<% end %>
