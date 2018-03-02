@@ -21,7 +21,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
-gem 'simple_form'
 gem 'pg_search'
 gem 'jquery-rails'
 gem "font-awesome-rails"
