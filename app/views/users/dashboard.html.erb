@@ -1,45 +1,51 @@
-<h1>My Profile</h1>
+<div class="container">
+  <div class="row">
+    <h1>My Profile</h1>
+    <div class="col-xs-12 col-md-4">
+      <h3>My personal data</h3>
+      <ul>
+        <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
+        <li>Email: <%= @user.email %></li>
+        <li>User id: <%= @user.id %></li>
+      </ul>
+    </div>
 
-<br>
-<h3>My personal data</h3>
-<ul>
-  <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
-  <li>Email: <%= @user.email %></li>
-  <li>User id: <%= @user.id %></li>
-</ul>
+    <div class="col-xs-12 col-md-4">
+      <h3>Spaceships I own</h3>
+      <% @user.spaceships.each do |s| %>
+      <ul>
+        <li><%= link_to s.name, spaceship_path(s) %></li>
+        <li>Captain: <%= s.captain %> </li>
+        <li>Location: <%= s.location %> </li>
+        <li>Capacity: <%= s.capacity %> </li>
+        <li>Price per day: <%= s.price_per_day %> </li>
+      </ul>
+      <%= cl_image_tag s.photo, height: 300, width: 400, crop: :fill %>
+      <br>
+      <% end %>
 
-<h3>Spaceships I rented</h3>
-<% @user.bookings.each do |booking| %>
-  <ul>
-    <li>Start date: <%= booking.start_date %></li>
-    <li>End date: <%= booking.end_date %></li>
-    <li><%= link_to booking.spaceship.name, spaceship_path(booking.spaceship) %></li>
-  </ul>
-  <% end %>
+      <h3>Bookings of my spaceship</h3>
+      <% @user.my_spaceships_bookings do |msb| %>
+        <%= msb.name %>
+        <%= msb.start_date %>
+        <%= msb.end_date %>
+        <%= msb.first_name %>
+        <%= msb.last_name %>
+      <% end %>
+    </div>
 
-<h3>Spaceships I own</h3>
-  <% @user.spaceships.each do |s| %>
-  <ul>
-    <li><%= link_to s.name, spaceship_path(s) %></li>
-    <li>Captain: <%= s.captain %> </li>
-    <li>Location: <%= s.location %> </li>
-    <li>Capacity: <%= s.capacity %> </li>
-    <li>Price per day: <%= s.price_per_day %> </li>
-  </ul>
-  <%= cl_image_tag s.photo, height: 300, width: 400, crop: :fill %>
-  <br>
-  <% end %>
-
-<h3>Bookings of my spaceship</h3>
-<% @user.my_spaceships_bookings do |msb| %>
-  <%= msb.name %>
-  <%= msb.start_date %>
-  <%= msb.end_date %>
-  <%= msb.first_name %>
-  <%= msb.last_name %>
-  <% end %>
-
-<br>
+    <div class="col-xs-12 col-md-4">
+      <h3>Spaceships I rented</h3>
+      <% @user.bookings.each do |booking| %>
+      <ul>
+        <li>Start date: <%= booking.start_date %></li>
+        <li>End date: <%= booking.end_date %></li>
+        <li><%= link_to booking.spaceship.name, spaceship_path(booking.spaceship) %></li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
 <%= link_to "Edit", edit_user_registration_path %>
-<%= link_to "Homepage", root_path %>
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<%#= link_to "Homepage", root_path %>
+<%#= link_to "Log out", destroy_user_session_path, method: :delete %>
+</div>
