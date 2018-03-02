@@ -11,10 +11,9 @@ console.log('Hello World from Webpacker')
 import "bootstrap";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
-// import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
-
 
 flatpickr(".datepicker", {
-  altInput: true
-  // plugins: [new rangePlugin({ input: "#range_end"})]
+  altInput: true,
+  mode: "range",
+  minDate: "today"
 });
