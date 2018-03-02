@@ -3,9 +3,11 @@
 }
 
 #map {
+
   opacity: 1;
-  width: 400px !important;
-  height: 85vh !important;
+  width: 22%;
+  height: 300px;
+  flex: 0 0 450px;
   position: fixed !important; /* !important to override Gmaps inline CSS */
   margin-bottom: 20px;
   margin-right: 20px;
@@ -13,3 +15,13 @@
   top: 100px;
   transition: opacity 0.5s;
 }
+
+@media (max-width: 768px) {
+  #map {
+    position: relative !important;
+    width: 100vw;
+  }
+  .map-container {
+    padding: 0;
+  }
+
