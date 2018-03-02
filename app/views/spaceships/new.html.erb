@@ -1,3 +1,4 @@
+<div class="flex-container">
 <h1>Add your Spaceship</h1>
 <%= simple_form_for(@spaceship) do |f| %>
   <% if @spaceship.errors.any? %>
@@ -20,3 +21,4 @@
   <%= f.input :price_per_day, as: :integer %>
   <%= f.button :submit %>
 <% end %>
+</div>

@@ -43,7 +43,6 @@
         <div class="flex flex-card" id="target-div">
           <% @spaceships.each do |s| %>
 
-
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
             <%= link_to spaceship_path(s), {:class => "display:block"} do %>
             <div class="overlay">
@@ -65,7 +64,7 @@
 
 <script>
 function mapScrolling() {
-    if (document.documentElement.scrollTop > 800) {
+    if (document.documentElement.scrollTop > 725) {
       console.log("MORE THAN 500")
         document.getElementById("map").className = "";
     } else {
