@@ -50,8 +50,8 @@
           <% end %>
         </li>
         <li>
-          <%= link_to new_user_session_path do %>
-          <i class="fa fa-arrow-right"></i></i> <%= t(".profile", default: "Log in") %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-arrow-left"></i> <%= t(".profile", default: "Log out") %>
           <% end %>
         </li>
       </ul>
