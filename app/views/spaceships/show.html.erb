@@ -16,7 +16,7 @@
     <p>Price Per Day: <%= @spaceship.price_per_day %></p>
     <p>Contact: <%= @spaceship.user.email %></p>
   </div>
-  <div>
+  <div class="showimage">
     <%= cl_image_tag @spaceship.photo, height: 300, width: 400, crop: :fill %>
   </div>
   <div>
