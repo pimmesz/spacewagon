@@ -16,18 +16,17 @@
   }
 }
 
-.flex {
+.flex-card {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
 
-.flex-card {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+@media (max-width: 768px) {
+  .flex-card {
+    justify-content: center;
+  }
 }
 
 .card-dashboard{

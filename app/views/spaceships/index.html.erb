@@ -41,7 +41,7 @@
         <div>
           <h4>Spaceships near you</h4>
         </div>
-        <div class="flex flex-card" >
+        <div class="flex-card" >
           <% @spaceships.each do |s| %>
 
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
