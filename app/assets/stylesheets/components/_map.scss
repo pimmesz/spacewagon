@@ -1,5 +1,11 @@
 .maphidden {
-  opacity: 0 !important;
+    opacity: 0 !important;
+  }
+
+@media (max-width: 768px) {
+  .maphidden {
+    opacity: 1 !important;
+  }
 }
 
 #map {
@@ -18,6 +24,7 @@
   #map {
     position: relative !important;
     width: 100vw;
+    top: 0px;
   }
   .map-container {
     padding: 0;
