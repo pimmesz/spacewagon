@@ -156,7 +156,27 @@ text-decoration: none !important;
   background-size:  cover;
 }
 
+.flexdashboarditems-autoheight {
+  background: white;
+  height: auto;
+  width: 400px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  background-size:  cover;
+}
+
 .flexdashboarditems img {
   height: 300px;
   width: 1000px !important;
+}
+
+
+
+@media (max-width: 768px) {
+  .showimage  {
+    height: auto;
+    width: 70vw;
+    margin: auto;
+  }
 }
